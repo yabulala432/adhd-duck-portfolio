@@ -91,7 +91,7 @@ export const projects = [
     title: "Multi-Tenant Bus-Aggregator Platform",
     description:
       "A complex platform for managing multiple bus companies and their operations",
-    tech: [
+    tags: [
       "React",
       "Node.js",
       "Express",
