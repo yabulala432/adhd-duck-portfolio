@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 
 const products = [
@@ -64,12 +63,7 @@ const products = [
 
 const Products: React.FC = () => {
   return (
-    <Box
-      pl={{ base: "20px", md: "200px" }}
-      pr={{ base: "20px", md: "100px" }}
-      pb={{ base: "20px", md: "50px" }}
-      pt={8}
-    >
+    <div className="px-5 md:px-24 lg:px-48 pt-8 pb-5 md:pb-12">
       <div className="text-center mb-16">
         <h2 className="text-5xl font-bold text-gray-800 tracking-tight">
           My Digital Creations
@@ -93,7 +87,7 @@ const Products: React.FC = () => {
           />
         ))}
       </div>
-    </Box>
+    </div>
   );
 };
 
