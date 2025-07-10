@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, Download, Send } from "lucide-react";
 import ADHDDuck from "@/components/adhd-duck";
 import Projects from "@/components/projects";
+import Products from "@/components/products";
 
 export default function Portfolio() {
   // const [soundEnabled, setSoundEnabled] = useState(false);
@@ -49,43 +50,43 @@ export default function Portfolio() {
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [keySequence]);
 
-  const projects = [
-    {
-      // Mezgebe Kdase in amharic = መዝገበ ቅዳሴ
-      title: "መዝገበ ቅዳሴ (Mezgebe Kdase)",
-      description:
-        "A modern Liturgy hymn learning platform for Ethiopian Orthodox Tewahedo Church",
-      tech: ["React", "Chakra-UI", "Netlify"],
-      github: "https://github.com/yabulala432/zema-web-react/",
-      demo: "https://mezgeb-kdase.netlify.app/",
-    },
-    {
-      title: "Pharmacy Management System",
-      description: "Comprehensive solution for managing pharmacy operations",
-      tech: ["Java", "MySQL"],
-      github: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
-      demo: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
-    },
-    {
-      title: "Multi-Tenant Bus-Aggregator Platform",
-      description:
-        "A complex platform for managing multiple bus companies and their operations",
-      tech: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Docker",
-        "Flutter",
-        "JWT",
-        "Tailwind CSS",
-        "TypeScript",
-        "Microservices",
-      ],
-      github: "https://github.com/yabulala432/bus-aggregator-platform",
-      demo: "https://github.com/yabulala432/bus-aggregator-platform",
-    },
-  ];
+  // const projects = [
+  //   // {
+  //   //   // Mezgebe Kdase in amharic = መዝገበ ቅዳሴ
+  //   //   title: "መዝገበ ቅዳሴ (Mezgebe Kdase)",
+  //   //   description:
+  //   //     "A modern Liturgy hymn learning platform for Ethiopian Orthodox Tewahedo Church",
+  //   //   tech: ["React", "Chakra-UI", "Netlify"],
+  //   //   github: "https://github.com/yabulala432/zema-web-react/",
+  //   //   demo: "https://mezgeb-kdase.netlify.app/",
+  //   // },
+  //   {
+  //     title: "Pharmacy Management System",
+  //     description: "Comprehensive solution for managing pharmacy operations",
+  //     tech: ["Java", "MySQL"],
+  //     github: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
+  //     demo: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
+  //   },
+  //   {
+  //     title: "Multi-Tenant Bus-Aggregator Platform",
+  //     description:
+  //       "A complex platform for managing multiple bus companies and their operations",
+  //     tech: [
+  //       "React",
+  //       "Node.js",
+  //       "Express",
+  //       "MongoDB",
+  //       "Docker",
+  //       "Flutter",
+  //       "JWT",
+  //       "Tailwind CSS",
+  //       "TypeScript",
+  //       "Microservices",
+  //     ],
+  //     github: "https://github.com/yabulala432/bus-aggregator-platform",
+  //     demo: "https://github.com/yabulala432/bus-aggregator-platform",
+  //   },
+  // ];
 
   // Add these states for form data and submission status
   const [formData, setFormData] = useState({
@@ -272,6 +273,11 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Products Section */}
+        <section className="py-24 bg-gradient-to-b from-yellow-50 to-blue-100">
+          <Products />
+        </section>
+
         {/* Projects Section */}
         <section
           ref={projectsRef}
@@ -285,52 +291,6 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
               Featured Projects
             </h2>
-            {/* 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
-                >
-                  <CardHeader>
-                    <CardTitle className="group-hover:text-yellow-600 transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex gap-2">
-                      <Button
-                        onClick={() => window.open(project.github, "_blank")}
-                        className="flex items-center"
-                        variant="outline"
-                        size="sm"
-                      >
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Button>
-                      <Button
-                        onClick={() => window.open(project.demo, "_blank")}
-                        className="flex items-center"
-                        variant="outline"
-                        size="sm"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>*/}
-
             <Projects />
           </div>
         </section>

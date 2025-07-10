@@ -23,17 +23,17 @@ export const projects = [
     siteLink: "https://github.com/yabulala432",
     github: "https://github.com/yabulala432",
   },
-  {
-    id: 2,
-    //
-    title: "መዝገበ ስብሐት (Mezgebe Sbhat)",
-    category: "Mobile",
-    description: "An Ethiopian Orthodox Tewahdo Hymn learning mobile app.",
-    video: "/ProjectsImage/mezgebe_sbhat.mp4",
-    tags: ["Flutter", "Dart", "Mobile App"],
-    sourceLink: "https://github.com/yabulala432/mezgebe_sbhat",
-    github: "https://github.com/yabulala432/mezgebe_sbhat",
-  },
+  // {
+  //   id: 2,
+  //   //
+  //   title: "መዝገበ ስብሐት (Mezgebe Sbhat)",
+  //   category: "Mobile",
+  //   description: "An Ethiopian Orthodox Tewahdo Hymn learning mobile app.",
+  //   video: "/ProjectsImage/mezgebe_sbhat.mp4",
+  //   tags: ["Flutter", "Dart", "Mobile App"],
+  //   sourceLink: "https://github.com/yabulala432/mezgebe_sbhat",
+  //   github: "https://github.com/yabulala432/mezgebe_sbhat",
+  // },
   {
     id: 3,
     title: "Gamehub Demo",
@@ -46,21 +46,21 @@ export const projects = [
       "/ProjectsImage/gamehub4.png",
       "/ProjectsImage/gamehub5.png",
     ],
-    tags: ["React", "Typescript", "Gaming"],
+    tags: ["React", "Typescript", "Gaming", "Rawg API"],
     siteLink: "https://game-hub-psi-three.vercel.app/",
     github: "https://github.com/yabulala432/game-hub",
   },
-  {
-    id: 4,
-    title: "መዝገበ ቅዳሴ (Mezgebe Kdase)",
-    category: "FrontEnd",
-    video: "/ProjectsImage/mezgeb_kdase_web_final.mp4",
-    description:
-      "A modern Liturgy hymn learning platform for Ethiopian Orthodox Tewahedo Church",
-    tags: ["React", "Chakra-UI", "Netlify"],
-    siteLink: "https://mezgeb-kdase.netlify.app/",
-    github: "https://github.com/yabulala432/zema-web-react/",
-  },
+  // {
+  //   id: 4,
+  //   title: "መዝገበ ቅዳሴ (Mezgebe Kdase)",
+  //   category: "FrontEnd",
+  //   video: "/ProjectsImage/mezgeb_kdase_web_final.mp4",
+  //   description:
+  //     "A modern Liturgy hymn learning platform for Ethiopian Orthodox Tewahedo Church",
+  //   tags: ["React", "Chakra-UI", "Netlify"],
+  //   siteLink: "https://mezgeb-kdase.netlify.app/",
+  //   github: "https://github.com/yabulala432/zema-web-react/",
+  // },
   {
     id: 5,
     title: "Pharmacy Management System",
