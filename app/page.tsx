@@ -1,56 +1,55 @@
 "use client";
-import { useState, useRef } from "react";
+import ADHDDuck from "@/components/adhd-duck";
+import CertificationsSection from "@/components/certifications";
+import Products from "@/components/products";
+import Projects from "@/components/projects";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Download, Send } from "lucide-react";
-import Projects from "@/components/projects";
-import Products from "@/components/products";
-import CertificationsSection from "@/components/certifications";
+import { Download, Github, Linkedin, Mail, Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Portfolio() {
+  const [duckMode, setDuckMode] = useState("normal");
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const [keySequence, setKeySequence] = useState("");
+
   const heroRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
 
-  const projects = [
-    {
-      // Mezgebe Kdase in amharic = መዝገበ ቅዳሴ
-      title: "መዝገበ ቅዳሴ (Mezgebe Kdase)",
-      description:
-        "A modern Liturgy hymn learning platform for Ethiopian Orthodox Tewahedo Church",
-      tech: ["React", "Chakra-UI", "Netlify"],
-      github: "https://github.com/yabulala432/zema-web-react/",
-      demo: "https://mezgeb-kdase.netlify.app/",
-    },
-    {
-      title: "Pharmacy Management System",
-      description: "Comprehensive solution for managing pharmacy operations",
-      tech: ["Java", "MySQL"],
-      github: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
-      demo: "https://github.com/yabulala432/PharmacyManagementSystemNewUI",
-    },
-    {
-      title: "Multi-Tenant Bus-Aggregator Platform",
-      description:
-        "A complex platform for managing multiple bus companies and their operations",
-      tech: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Docker",
-        "Flutter",
-        "JWT",
-        "Tailwind CSS",
-        "TypeScript",
-        "Microservices",
-      ],
-      github: "https://github.com/yabulala432/bus-aggregator-platform",
-      demo: "https://github.com/yabulala432/bus-aggregator-platform",
-    },
-  ];
+
+  // Easter egg detection
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      const newSequence = (keySequence + e.key?.toLowerCase()).slice(-5);
+
+      setKeySequence(newSequence);
+
+      if (newSequence === "quack") {
+        console.log("quack");
+        setShowEasterEgg(true);
+        setDuckMode("army");
+        setTimeout(() => {
+          setShowEasterEgg(false);
+          setDuckMode("normal");
+        }, 5000);
+      } else if (newSequence.includes("egg")) {
+        console.log("yeah");
+        setShowEasterEgg(true);
+        setDuckMode("egg");
+        setTimeout(() => {
+          setShowEasterEgg(false);
+          setDuckMode("normal");
+        }, 5000);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [keySequence]);
+
 
   // Add these states for form data and submission status
   const [formData, setFormData] = useState({
@@ -93,6 +92,49 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-yellow-50 relative overflow-hidden">
+      <ADHDDuck />
+
+      {/* Easter Egg Army */}
+      {showEasterEgg && duckMode === "army" && (
+        <div className="fixed inset-0 pointer-events-none z-40">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-bounce"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${i * 0.2}s`,
+                animationDuration: "1s",
+              }}
+            >
+              🦆
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* egg emoji showing */}
+      {showEasterEgg && duckMode === "egg" && (
+        <div className="fixed inset-0 pointer-events-none z-40">
+          <div className="absolute inset-0 flex items-center justify-center">
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute animate-bounce"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.2}s`,
+                  animationDuration: "1s",
+                }}
+              >
+                🥚
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -262,6 +304,16 @@ export default function Portfolio() {
             Let's Work Together!
           </h2>
 
+          {/* Easter Egg Hint */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-yellow-200 text-yellow-900 px-4 py-2 rounded-full font-medium shadow">
+              Pssst... Try typing{" "}
+              <span className="font-mono font-bold">quack</span> or{" "}
+              <span className="font-mono font-bold">egg</span> anywhere on
+              this page for a surprise!
+            </span>
+          </div>
+
           <Card className="shadow-xl">
             <CardContent className="p-8">
               <form className="space-y-6" onSubmit={handleSubmit}>
@@ -327,7 +379,7 @@ export default function Portfolio() {
                   size="lg"
                   className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
                 >
-                  Send Message
+                  Send Message 🦆
                 </Button>
                 {formStatus === "success" && (
                   <div className="text-green-600 text-center mt-4">
@@ -350,6 +402,10 @@ export default function Portfolio() {
         <p>
           &copy; 2025 Yeabsira Yonas. Made with ❤️ and excessive amounts of
           coffee.
+        </p>
+        <p className="text-sm text-gray-400 mt-2">
+          Powered by an ADHD duck. No ducks were harmed in the making of this
+          portfolio.
         </p>
       </footer>
     </div>
