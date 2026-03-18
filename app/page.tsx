@@ -155,22 +155,22 @@ export default function Portfolio() {
           </div>
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
-            <a
+            {/* <a
               href="/resume.pdf"
               download={true}
               // target="_blank"
               rel="noopener noreferrer"
               className="no-underline"
             >
-              <Button
+               <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
-              </Button>
-            </a>
-            <Button
+              </Button> 
+            </a> */}
+            {/* <Button
               onClick={() => {
                 contactRef.current?.scrollIntoView({ behavior: "smooth" });
               }}
@@ -179,11 +179,11 @@ export default function Portfolio() {
             >
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
-            </Button>
+            </Button> */}
           </div>
 
           <div className="flex justify-center gap-6">
-            <Button
+            {/* <Button
               variant="ghost"
               size="icon"
               className="hover:scale-110 transition-transform"
@@ -192,8 +192,8 @@ export default function Portfolio() {
               }}
             >
               <Github className="h-6 w-6" />
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               variant="ghost"
               size="icon"
               className="hover:scale-110 transition-transform"
@@ -205,8 +205,8 @@ export default function Portfolio() {
               }}
             >
               <Linkedin className="h-6 w-6" />
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               variant="ghost"
               size="icon"
               className="hover:scale-110 transition-transform"
@@ -216,8 +216,8 @@ export default function Portfolio() {
               }}
             >
               <Mail className="h-6 w-6" />
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               variant="ghost"
               size="icon"
               className="hover:scale-110 transition-transform"
@@ -227,7 +227,7 @@ export default function Portfolio() {
               }}
             >
               <Send className="h-6 w-6" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
